@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>박스모델의 display 속성</title>
+<style type="text/css">
+span {
+	background-color: gold;
+}
+
+div {
+	background-color: tomato;
+}
+</style>
+</head>
+<body>
+	<span>Inline-Box</span>
+	<span>Inline-Box</span>
+	<span>Inline-Box</span>
+	<span>Inline-Box</span>
+	<div>Block-Box</div>
+	<div>Block-Box</div>
+	<div>Block-Box</div>
+	<div>Block-Box</div>
+	<div style="display: inline;">Block-Box를 inline으로 변경</div>
+	<span>Inline-Box</span>
+	<span style="display: block;">Inline-Box를 Block으로 변경</span>
+	<div style="display: none;">Box를 안보이게</div>
+	<div>마지막 Box</div>
+</body>
+</html>

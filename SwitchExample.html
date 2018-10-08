@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>제어문</title>
+</head>
+<body>
+
+
+  <script type="text/javascript">
+			var score = prompt("성적을 입력하세요",0);
+			score = parseInt(score);
+			console.log(typeof (score/10));
+			
+			switch (Math.floor(score/10)) {
+			case 10:
+			case 9: console.log('수'); break;
+			case 8: console.log('우'); break;
+			case 7: console.log('미'); break;
+			case 6: console.log('양'); break;
+			default:console.log('가'); break;
+			}
+			
+		</script>
+</body>
+</html>

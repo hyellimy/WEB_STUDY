@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript</title>
+<style type="text/css">
+
+
+</style>
+
+<script src="js/common.js">
+/*함수 선언
+function sum(x, y) {
+	return x + y;
+}
+*/
+</script>
+</head>
+<body>
+  <h2>오늘부터 자바 스크립Hello.html트 연습입니다...</h2>
+  <p>- 인터프리터 언어 – 컴파일 과정을 거치지 않고 바로 실행시킬 수 있는 언어이다(빠르게 개발 가능하지만 디버깅이
+    어렵다) - 동적 타이핑(Typing) – 변수의 데이터타입을 선언하지 않고도 변수를 사용할 수 있다. 단순히 모든 변수는
+    var x;와 같이 선언한다. - 절차적 프로그래밍 지원 – C언어의 절차적 프로그래밍 지원한다. 즉 if, while,
+    for 등의 제어 구조를 완벽하게 지원한다. - 객체 지향 프로그래밍 지원 – 자바스크립트는 자바 언어와 달리 클래스
+    기반이 아닌 프로토타입(prototype:원형) 기반 객체지향언어이다. - 함수형 프로그래밍 지원 – 함수는 실행코드를
+    가진 일급 객체(first-class object)로 취급되며 call(), apply() 등과 같은 다양한 메소드를
+    지원한다.</p>
+
+  ---------------------------------------------------------
+  <br>
+  <!-- 스크립트 선언 -->
+  <script type="text/javascript">
+			//식별자, 키워드, 변수, 데이터타입, 연산자, 제어문, 함수 , 객체 
+			document.write("<h2>안녕 자바스크립트</h2>");
+			document.write("<p2>이혜림입니다.</p2>");
+			document.write(25 + "<br>");
+			document.write(true);
+			document.write(false);
+		</script>
+  ---------------------------------------------------------
+  <br>
+  <script type="text/javascript">
+			// 기본 데이터 타입의 종류 3가지 
+			// [String type] 변수 선언 
+			var name;
+			document.write(name);
+			name = '나는 "이혜림"입니다.';
+			document.write(name);
+
+			// [Number type] 선언과 할당을 동시에
+			var a = 10, b = 20, c = 30;
+
+			// [boolean type] 
+			var flag = true;
+			document.write(flag + "<br>");
+
+			//레퍼런스 타입(객체)
+			var message = new String("나는 레퍼런스 타입의 문자열 객체 입니다.");
+			document.write(message.length);
+			document.write(message);
+
+			//변수 오버라이트 Overwrite 가능
+			var a = 1000;
+			document.write(a);
+
+			//동적 타이핑
+			name = 5000;
+			name = false;
+
+			document.write(name);
+		</script>
+  ---------------------------------------------------------
+  <br>
+  <script type="text/javascript">
+			var x = 50;
+			var y = 40;
+			var result = sum(x, y);
+			document.write(result);
+		</script>
+
+
+
+
+
+
+</body>
+</html>

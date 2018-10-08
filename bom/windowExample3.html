@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>브라우저 객체</title>
+</head>
+<body>
+<h2>디지털 시계 구현</h2>
+<script type="text/javascript">
+(function(){
+	var windowWidth = 400;
+	var windowHeight = 200;
+	var x = (screen.width - windowWidth) / 2;
+	var y = (screen.height - windowHeight) / 2;
+	clockWindow = open("", "clockWindow", "left="+x+", top="+y+", width="+windowWidth+", height="+windowHeight);
+})();
+
+//주기적으로 계속 호출하는 기능 : 부모 창의 도큐먼트가 된다. 
+window.setInterval(function(){
+	var now = new Date();
+	//document.write("<p style='text-align:center'>" + now.toLocaleString() + "</p>");
+	clockWindow.document.write("<p style='text-align:center'>" + now.toLocaleString() + "</p>");
+}, 1000);
+
+// 같은 위치에 시계가 찍히기 위해서는 dom구조 이해가 필요하다. 
+</script>
+</body>
+</html>

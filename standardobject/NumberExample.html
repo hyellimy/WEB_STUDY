@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+console.log(Number.MAX_VALUE);
+console.log(Number.MIN_VALUE);
+//new를 붙일때와 붙이지 않을 때 다르다. 
+var num = new Number(1234); 
+console.log(num.toString());
+console.log(typeof num.valueOf());
+
+var value = Number("567");
+console.log(typeof value);
+alert(value + 1);
+
+var weight = 78.3434343;
+console.log(weight.toFixed(2)); //소숫점 둘쨋자리까지 출력
+
+console.log(100/0);          // Infinity
+console.log(100/"김기정");   // NaN
+</script>
+</body>
+</html>
+
+
+
+

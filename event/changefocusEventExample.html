@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<title>이벤트 처리</title>
+<meta charset="utf-8">
+<script> 
+window.onload = function () {
+	document.myForm.name.onchange = function(){
+		checkValidate(this);
+	};
+	
+	document.myForm.fruits.onchange = function(){
+		checkSelect(this);
+	};
+	
+	document.getElementById("id").onfocus = function(){
+		clearField(this);		
+	};
+	
+	document.getElementById("id").onblur = function(){
+		if(this.value == ""){
+    		alert("아이디를 입력하여 주세요..");
+    		this.focus();
+    	}else{
+    		alert('당신의 아이디는 '+this.value+'입니다..');
+    	}
+	};
+	
+	document.getElementsByName("address")[0].onkeyup = function(){
+		console.log(document.getElementsByName("address")[0].value);
+		// Ajax를 이용한 서버쪽에 입력값 전송은 추후에....
+	}
+}
+
+function checkValidate(input){
+	var name = input.value;
+	if(name.length > 3) {
+		alert("이름은 3글자 이하여야 합니다!");
+		//input.value = name.substring(0,3)
+		input.value = "";
+		input.focus();
+	}
+}
+
+function checkSelect(select){
+	var seletedValue = select.options[select.selectedIndex].value;
+	alert("당신은 " + seletedValue + "을 선택하셨습니다.");
+}
+
+function clearField(input){
+	input.value = "";
+}
+</script>
+</head>
+<body>
+change, focus, blur 이벤트 처리
+<form name="myForm">
+이름 <input type="text" name="name"><br>
+과일 <select name="fruits">
+       <option value="사과">사과
+       <option value="감">감
+       <option value="배">배
+      </select>
+</form>
+
+<input type="text" id="id" name="id" value="아이디" ><br/>
+<input type="text" name="name" placeholder="이름">
+<input type="text" name="address" placeholder="주소" >
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

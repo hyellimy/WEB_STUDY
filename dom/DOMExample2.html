@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM 이해</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	// 동적 엘리먼트 생성
+	var element = document.createElement("h1"); //자식으로 넣어준다. 
+	var text = document.createTextNode("안녕하세요 DOM");
+	element.appendChild(text); //appendChild를 통해 붙여준다. 
+	
+	//document.getElementsByTagName("body").item(0).appendChild(element); //정통 표준 dom
+	// nodelist - 첫번째 것 - 동적으로 붙여주기 순으로 과정 
+	document.body.appendChild(element); //위에랑 같은 의미 
+
+	var imgE = document.createElement("img");
+	//imgE.src = "icons5575.png";
+	imgE.setAttribute("src", "icons4681.png"); // ( 속성이름, 속성 값 )
+	document.body.appendChild(imgE); // body 에 붙여준다. 
+
+	//야매~_~
+	document.body.innerHTML += "<h2>동적 엘리먼트 추가</h2>";
+	document.body.innerHTML += "<img src='icons5575.png'/>";
+</script>
+</body>
+</html>
+
+
+
+
+

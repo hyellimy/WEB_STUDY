@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+window.onload = function(){
+	// 표준이벤트 처리
+	document.getElementsByTagName("button")[0].addEventListener("click", function(){
+		alert("이넘이 표준 이벤트 처리 모델입니다..");		
+	});
+	// 익스플로러 9버전 이하
+	/*
+	document.getElementsByTagName("button")[0].attachEvent("onclick", function(){
+		alert("이넘이 표준 이벤트 처리 모델입니다..");		
+	});
+	*/ 
+}
+
+window.addEventListener("load", function(){
+	alert("문서로드 완료요..");
+});
+</script>
+</head>
+<body>
+<button>HTML버튼</button>
+</body>
+</html>
+
+
+
+
+
+
+
+

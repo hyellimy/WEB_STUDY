@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>브라우저와 관련된 자바 스크립트 객체(BOM)</title>
+</head>
+<body>
+<h2>Browser Object Model</h2>
+<script type="text/javascript">
+console.log(window);
+console.log(window.constructor);
+
+/* for ( var name in window) {
+	console.log(name + ":" + window[name]);
+} */ 
+
+//window.close();    : 자동으로 창 닫힌다. 
+
+// this. <- this란, 윈도우다. 
+console.log(this);
+function Student() {
+	//this.
+}
+
+var x = 10; // x는 앞에, window.x가 생략된 것으로 생각해야 한다. 
+// window.x = 10; 얜 못 덮어쓴다. ~_~ 
+console.log(x);
+console.log(window.x);
+
+window.alert("메시지");
+
+for ( var i in window.document) {
+	console.log(i + ":" + window.document[i]);
+}
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>자바스크립트 함수</title>
+<script type="text/javascript">
+
+// #1. 선언형 함수 정의 (특징 : 선언된 함수가 가장 먼저 실행됨. 어디서 호출해도 상관 X) [추천]
+function sum(x,y,z){
+	return x+y+z;
+}
+
+// #2. 익명 함수 정의 (특징 : 위에서 SHOW 호출하면 ERROR)
+var show = function(message){
+	document.write(message);
+}
+//일반 인자가 아니라 함수를 줘라!!!!!!!!!
+function some(callback){
+	callback();
+}
+function some2(){
+	//--- 코드가 있겠찌, return 안에 함수 넣기
+	return function(){
+		document.write("리턴함수요");
+	};
+}
+
+// 선언형 함수와 익명 함수의 가장 큰 차이 : 선언형을 선언함수가 먼저 실행되고 어디서 호출해도 상관 x / 익명 함수는 위치따라
+
+// #3. 중첩 함수 
+function hypothenuse(a,b){
+	function square(x){
+		//return x*x;
+		return Math.pow(x,2);
+	}
+	return Math.sqrt(square(a)+square(b));
+}
+
+// 비정형인자 함수 정의 
+function summ(){
+	console.log(arguments);
+	var result = 0;
+	for ( var i in arguments) {
+		result += arguments[i];
+	}
+	return result;
+}
+</script>
+
+
+</head>
+<body>
+<script>
+// #1. window 객체에 등록된 sum메소드 호출
+var result = sum(10, 20, 30);
+document.write("결과 : " + result+ "<br>");
+// var result = sum( 10, 20 ) => 이렇게 할 경우 NaN (Not a Number)
+
+
+//#2. 익명 함수 호출
+show("자바 스크립트 어렵지 않아요 ^_^"+ "<br>");
+
+// some 함수 전달
+some(function(){
+	document.write("익명함수 콜이요!!!");
+});
+
+//some2호출
+some2()();
+
+// #3. 중첩함수 호출
+
+console.log(sum());
+console.log(summ(1));
+console.log(summ(1,2));
+console.log(summ(1,2,3));
+summ();
+summ(1);
+summ(1,2);
+
+//summ 함수의 원형을 보여준다. toString()
+console.log(summ);
+//객체 종류 : function
+//결과 값 : string / number / boolean / object / function 
+console.log(typeof summ);
+
+(function() {
+	console.log("익명함수입니다.ㅣ");
+})();
+
+</script>
+</body>
+</html>

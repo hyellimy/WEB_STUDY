@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트 처리</title>
+<script type="text/javascript">
+//여기가 자동 호출되는 자바의 main이라고 생각하면 된다. 
+window.onload = function() {
+	init();
+	eventRegist();
+}
+
+
+function init() {
+	//초기화 작업
+}
+
+
+/** 이벤트 소스에 이벤트 리스너 등록 */
+function eventRegist() {
+		document.getElementById("myButton").onclick = function() {
+			exit();
+		}
+}
+
+function exit() {
+	window.close();
+}
+</script>
+</head>
+<body>
+
+<input type="button" value="클릭하면 화면 꺼짐" id="myButton"></input>
+
+</body>
+</html>

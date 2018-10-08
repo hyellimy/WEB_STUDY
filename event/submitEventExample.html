@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<title>이벤트 처리</title>
+<meta charset="utf-8">
+<script>
+window.onload = function () {
+	//dom으로 접근하려면
+	//document.getElementsByName("myForm")[0].onsubmit;
+	console.log(document.myForm.name); // 폼의 이름으로 접근 
+	console.log(document.myForm.action);
+	console.log(document.myForm.method);
+	
+	document.myForm.name.onclick = function(){
+		//document.myForm.name.value = "";
+		this.value = "";
+	}
+	
+	document.myForm.onsubmit = function () {
+		//var name = document.myForm.name.value;
+		//미리 만들어 놓은 forms로 접근 가능하다. 
+		// 동적으로 접근하기 위해 elements로 만들어져 있다. 
+		//0 :폼안의 첫번째 것 / 1 : 폼안의 두번째 것 
+		var name = document.forms[0].elements[0].value;
+		if(name == null || name.length == 0){
+			alert('이름을 입력하여 주세요.');
+			 document.myForm.name.focus();
+			return false; // 디폴트 이벤트핸들러 제거
+		}
+		return true;
+		//document.myForm.submit();	        
+	};
+};
+</script> 
+</head>
+<body>
+<form name="myForm" action="#">
+  <input type="text" name="name" value="이름"/><br>
+  <input type="submit" value="제출"/>
+</form>
+</body>
+</html>
+
+
+
+
+

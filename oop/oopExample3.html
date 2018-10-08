@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<script type="text/javascript" src="../js/Student.js">
+//Prototype에 메서드 넣어두기 
+
+</script>
+<body>
+<script type="text/javascript">
+var student = new Student("이혜림", 100, 98, 90, 88);
+console.log("총점: " + student.getSum());
+console.log("평균: " + student.getAverage());
+console.log("호출하지 않으면, 함수 내용의 인출 : " + student.getAverage);
+
+console.log("Object 객체의 toString : " + student.toString());
+//function 객체의 toString이다. 
+console.log("Function의 Prototype객체의 toString"+Student.toString());
+
+
+
+// 필요할때 사용 : 코스타 대학교 
+console.log(Student.schoolName);
+
+
+console.log(student.constructor);
+console.log(Student);
+
+//생성자도 함수
+var student2 = new student.constructor("aaaa", 10, 20, 30, 40);
+console.log(student2);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+
+<body>
+<script type="text/javascript">
+//내장 개체 테스트 
+var string = new String("김기정");
+console.log(string.charAt(1));
+
+var today = new Date();
+console.log(today.toString());
+
+
+var array = new Array();
+array.push(1);
+array.push("김기정");
+console.log(array.pop());
+
+
+//동적 함수 생성
+//Function : 자바스크립트의 짱짱~!~!~! 상속할때최고쓰
+var sum = new Function("x", "y", "return x+y;")
+
+//함수 호출
+console.log(sum(10,20));
+
+</script>
+
+
+</body>
+</html>

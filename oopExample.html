@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<script type="text/javascript">
+/* 사용자 정의 객체 */ 
+function Student(name, korean, math, english, science){
+	this.name = name;
+	this.korean = korean;
+	this.math = math;
+	this.english = english;
+	this.science = science;
+	
+	
+	//메서드 정의
+	this.getSum = function() {
+		return this.korean + this.math + this.english + this.science;
+	}
+	this.getAverage = function() {
+		return this.getSum()/4;
+	}
+	
+ 	this.toString = function() {
+		return this.name+"\t"+this.korean+"\t"+ this.math+"\t"+this.english+"\t"+this.science;
+	} 
+}
+
+</script>
+<body>
+<script type="text/javascript">
+var student = new Student('이혜림', 100, 98, 90, 88);
+console.log(student.name);
+console.log(student.korean);
+console.log(student["math"]);
+
+console.log(typeof Student); //함수
+console.log(typeof student); //object
+
+console.log(student.toString()); // 결과값 : 이혜림 100, 98, 90, 88 [object object]
+console.log(student); // 자동으로 toString 되어 인출 [브라우져가 알아서 문자열 인출]
+//정리 : 반드시 toString 메서드를 작성하고 호출하기 
+
+console.log("평균: " + student.getAverage());
+console.log("호출하지 않으면, 함수 내용의 인출 : " + student.getAverage);
+console.log("총점: " + student.getSum());
+
+//출력하기
+</script>
+
+
+</body>
+</html>

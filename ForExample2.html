@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>for in 문</title>
+<link rel="stylesheet" type="text/css" href="css/table.css">
+</head>
+<body>
+<h2>for in 문</h2>
+<script>
+//묵시적 배열 생성 및 초기화
+var array = [1,2,3,4,5];
+console.log(array.length);
+//전체 배열의 길이 = 5
+for ( var i in array) {
+	console.log(i +":" +array[i]);
+}
+
+for ( var key in document) {
+	console.log(key + ":" + document[key]);
+}
+
+
+
+
+</script>
+</body>
+</html>

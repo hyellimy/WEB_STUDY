@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>문서 객체들에 대한 이벤트 처리</title>
+<script>
+window.onload = function () {
+	document.getElementById("confirmButton").onclick = function(){
+		selectFruit(document.theForm);
+	}
+}
+
+function selectFruit(form) {
+    for (var i = 0; i < form.fruit.length; i++) {
+        if (form.fruit[i].checked == true) {
+            alert(form.fruit[i].value + "를 선택했습니다.")
+        }
+    }
+}
+</script> 
+</head>
+<body>
+<h2>Form 관련 이벤트 처리</h2>
+
+좋아하는 과일을 선택하세요.<br/>
+<form name="theForm">
+    <input type="radio" name="fruit" value="사과" checked> 사과<br/>
+    <input type="radio" name="fruit" value="포도"> 포도<br/>
+    <input type="radio" name="fruit" value="메론"> 메론<br/>
+    <input type="button" value="확인" id="confirmButton">
+</form>
+</body>
+</html>

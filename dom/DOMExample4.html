@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM 이해</title>
+</head>
+<body>
+	<h1 id="header">CSS 동적 적용하기</h1>
+
+	<h2 class="myClass">AAAAAAAAAA</h2>
+	<h2 class="myClass">BBBBBBBBBB</h2>
+	<h2 class="myClass">CCCCCCCCCC</h2>
+	<h2 class="myClass">AAAAAAAAAA</h2>
+	
+<script type="text/javascript">
+	var header = document.getElementById("header");
+	
+	// ecma5 추가 기능 : CSS 접근자로 접근하는 기능 추가됨. 
+	//var header = document.querySelector("#header");
+	header.style.color = "blue";
+	//header.style["background-color"] = "blue"; //특수문자 접근
+	header.style.backgroundColor = "yellow";
+	header.style.border = "2px double red";
+	
+	
+	//Class 선택자로 접근함. 
+	var list = document.querySelectorAll(".myClass");
+	for (var i = 0; i < list.length; i++) {
+		list[i].style.color = "#0000FF";
+	}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

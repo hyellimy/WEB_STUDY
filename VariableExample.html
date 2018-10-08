@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<script>
+//변수 Hoisting : for문 안에서 선언되었으나 밖에서도 활용 가능
+for(var i = 0; i <=10 ; i++){
+	console.log(i);
+}
+
+console.log("for문 밖에서 : " + i);
+
+//message는 전역변수
+var message = "변수 사용 범위";
+console.log(message);
+console.log(window.message);
+//정확하게, window.message 와 같은 내용이 들어간 것 
+
+
+function x() {
+	//지역변수
+	//var message2 = "메시지";
+	//var를 쓰지않고 선언하면 전역변수가 된다
+	message2 = "메시지";
+}
+
+function y(){
+	console.log(message);
+	console.log(message2);
+}
+x();
+y();
+console.log(message2);
+console.log(window.message2);
+</script>
+</body>
+</html>

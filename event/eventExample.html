@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트 처리</title>
+</head>
+<body>
+
+<input type="button" value="클릭하세요! 자바 스크립트" id="myButton"></input>
+<script type="text/javascript">
+
+var eventSource = document.getElementById("myButton");
+var eventListener = document.body;
+
+//이벤트 소스에 이벤트 리스너 등록
+//eventSource.onclick = null; // 현재상태는 null 
+
+
+eventListener.onclick = function() {
+	
+}
+
+function someDo() {
+	alert("헐랭이...");
+}
+eventSource.onclick = function() {
+	console.log("왜눌렀어?");
+};
+
+// 	고전 이벤트 처리 모델 : 더 자주 사용한다. 
+//eventSource.onclick = someDo; // 호출하는거 아니야~_~ : 오버라이트 된다. 
+
+
+//	표준 이벤트 처리 모델
+eventSource.addEventListener("click", someDo, false); // 클릭했을때, SomeDo 활용 
+
+//	익스플로러 이벤트 처리 모델 (Property 이름, 처리하고자 하는 이벤트 이름)
+//eventSource.attachEvent("onclick",someDo);
+</script>
+
+</body>
+</html>

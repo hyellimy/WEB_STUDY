@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style type="text/css">
+canvas {
+	border: 3px solid
+}
+</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="600" height="400"></canvas>
+	<script type="text/javascript">
+		var ctx = document.getElementById("myCanvas");
+		var myContext = ctx.getContext("2d");
+		
+		myContext.beginPath();
+		myContext.strokeStyle = "rgb(255,0,0)";
+		myContext.strokeRect(10, 10, 100, 100);
+		
+		//사각형 내부 파란색으로 채움
+		myContext.fillStyle = "blue";
+		myContext.fillRect(150, 10, 100, 100);
+		
+		//삼각형 내부 빨간색으로 채움
+		myContext.moveTo(80, 120);
+		myContext.lineTo(20, 240);
+		myContext.lineTo(140, 240);
+		myContext.lineTo(80, 120);
+		myContext.fillStyle = "#FF0000";
+		myContext.fill();
+		
+		//원 내부 빨간색으로 채움
+		myContext.arc(200, 200, 50, 0, 2 * Math.PI);
+		myContext.fill();
+	</script>
+</body>
+</html>

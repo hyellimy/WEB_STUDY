@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style type="text/css">
+canvas {
+	border: 3px solid
+}
+</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="600" height="400"></canvas>
+	<script type="text/javascript">
+		var ctx = document.getElementById("myCanvas");
+		var myContext = ctx.getContext("2d");
+
+		var gradient = myContext.createLinearGradient(0, 0, 100, 0);
+		gradient.addColorStop(0, "white");
+		gradient.addColorStop(1, "blue");
+		myContext.fillStyle = gradient;
+		myContext.fillRect(10, 10, 100, 100);
+
+		gradient = myContext.createLinearGradient(150, 0, 250, 100);
+		gradient.addColorStop(0, "white");
+		gradient.addColorStop(1, "red");
+		myContext.fillStyle = gradient;
+		myContext.fillRect(150, 10, 100, 100);
+	</script>
+</body>
+</html>

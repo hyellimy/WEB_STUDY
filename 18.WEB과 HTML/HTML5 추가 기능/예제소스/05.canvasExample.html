@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style type="text/css">
+canvas {
+	border: 3px solid
+}
+</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="600" height="400">현재 브라우저는 캔바스를 지원하지 않습니다.</canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("myCanvas");
+		
+		// Canvas에 도형이나 선을 그리기 위한 도구 생성
+		var myContext = canvas.getContext("2d");
+		myContext.strokeRect(10, 10, 200, 150); // 선 사각형
+		myContext.fillRect(250, 10, 200, 150);  // 채워진 사각형
+		myContext.fillRect(10, 170, 200, 150);
+		myContext.clearRect(270, 20, 100, 50);  // 사각형 지움
+	</script>
+</body>
+</html>

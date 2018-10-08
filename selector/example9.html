@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+[title] {
+	color: blue;
+	font-weight: bold;
+}
+
+[type] {
+	background: yellow;
+}
+
+[title = "two"] {
+	border: 2px solid black;
+}
+
+p[title = "two"] {
+	color: red;
+}
+
+p[title ~= "second"] {
+	background: silver;
+}
+
+p[class ^= "second"] {
+	background: aqua;
+}
+
+p[class $= "wrap"] {
+	color: deeppink;
+	font-weight: bold;
+}
+
+[class *= "three"] {
+	background: yellow;
+}
+
+[class |= "second"] {
+	border: 2px dotted black;
+}
+
+[type = "password"] {
+	background: gold;
+}
+</style>
+</head>
+<body>
+	<div title="one">selector[attribute name]</div>
+	<div title="two">selector[attribute name=value]</div>
+	<p title="two">selector[attribute name=value]</p>
+	<p title="first second third">selector[attribute name~=value]</p>
+	<p class="second-container">selector[attribute name^=value]</p>
+	<p class="second-wrap">selector[attribute name$=value]</p>
+	<div class="one-two-three">selector[attribute name|=value]</div>
+	
+	<form action="">
+	 <input type="text" name="xxx">
+	 <input type="password" name="yyy" >
+	 <input type="range" name="zzz">
+	 <input type="number" name="aaa">
+	
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>배경색 관련 CSS 속성들</title>
+<style type="text/css">
+body {
+	background-color: gold;
+}
+
+.transparent {
+	border: 2px solid black;
+	background-color: transparent; /* 투명하게 설정 */
+	width: 200px;
+	height: 200px;
+}
+
+.notTransparent {
+	border: 2px dotted black;
+	background-color: tomato;
+	width: 200px;
+	height: 200px;
+}
+</style>
+</head>
+<body>
+	<div class="transparent">배경이 투명</div>
+	<p>
+	<div class="notTransparent">배경이 불투명</div>
+</body>
+</html>

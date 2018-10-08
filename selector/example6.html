@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+div + p {
+	background: orange;
+	color: green;
+}
+
+div.target ~ p {
+	background: blue;
+	color: green;
+}
+</style>
+</head>
+<body>
+	<div>Adjacent Sibling Selector(인접형제선택자)</div>
+	<p>Adjacent Sibling Selector(인접형제선택자)</p>
+	<p>Adjacent Sibling Selector(인접형제선택자)</p>
+	<div class="target">General Sibling Selector(일반형제선택자)</div>
+	<p>General Sibling Selector(일반형제선택자)</p>
+	<p>General Sibling Selector(일반형제선택자)</p>
+	<div>General Sibling Selector(일반형제선택자)</div>
+	<p>General Sibling Selector(일반형제선택자)</p>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Box 모델 float 속성</title>
+<style type="text/css">
+.outside {
+	background: olive;
+	font: 11px/1.6em Verdana;
+	padding: 10px;
+	text-align: justify;
+	height: 200px;
+}
+
+#left {
+	width: 100px;
+	height: 100px;
+	background: gold;
+	float: left;
+}
+
+#right {
+	width: 100px;
+	height: 100px;
+	background: tomato;
+	float: right;
+}
+
+#right2 {
+	width: 100px;
+	height: 100px;
+	background: silver;
+	float: left;
+}
+
+#footer {
+	height: 100px;
+	background: teal;
+	clear: both;
+}
+</style>
+</head>
+<body>
+
+	<div class="outside">
+		<div id="left">
+			Left Block Box
+		</div>
+		<div id="right">
+			Right Block Box
+		</div>
+		<div id="right2">Other Block Box</div>
+		ABCD float float float float float float float float float float float
+		ABCD float float float float float float float float float float float
+		ABCD float float float float float float float float float float float
+		ABCD float float float float float float float float float float float
+		<div id="footer">
+			Footer Block Box
+		</div>
+	</div>
+
+</body>
+</html>
+

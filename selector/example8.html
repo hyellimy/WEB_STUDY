@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>가상엘리먼트 선택자</title>
+<style type="text/css">
+p.intro::first-letter {
+	font-size: 200%;
+}
+
+p.intro::first-line {
+	font-weight: bold;
+}
+
+p:last-child::after {
+	content: "(source: www.w3school.com)";
+	color: blue;
+}
+
+::selection {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<h1>CSS Introduction</h1>
+	<h3>What is CSS?</h3>
+	<p class="intro">CSS stands for Cascading Style Sheets</p>
+	<p>
+		Css defines how HTML elements are to be displayed<br>
+	</p>
+</body>
+</html>

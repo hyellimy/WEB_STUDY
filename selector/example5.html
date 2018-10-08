@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+/* 자손 선택자 */
+div div {
+	background: yellow;
+	color: #0076ff;
+}
+
+
+div p {
+	background: #ffb100;
+	color: #0076ff;
+}
+
+/* 자식 선택자 */
+div > div {
+	background: blue;
+	color: #0076ff;
+}
+
+div > p {
+	background: #ffb100;
+	color: cyan;
+}
+</style>
+</head>
+<body>
+	<div>
+		<p>Descendant Selector(하위선택자)</p>
+		<div>
+			<ul>
+				<li><p>Descendant Selector(하위선택자)</p></li>
+			</ul>
+		</div>
+		
+		<div>자식입니다..</div>
+	</div>
+</body>
+</html>

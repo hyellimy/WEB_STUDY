@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+var array = ["기정", "강준", "광호","명식"];
+//var str = array.join();
+var str = array.join("|*|");
+console.log(str);
+
+//array.reverse();
+
+array.sort();
+console.log(array.join());
+
+var array2 = [100, 2, 5, 1, 105];
+
+// 정렬기준을 위해 이름없은 콜백함수 전달
+array2.sort(function(x, y){
+	return x - y;
+});
+
+for ( var key in array2) {
+	console.log(array2[key]);	
+}
+
+var array3 = [1, 2, 3, 4, 5];
+var subArray = array3.slice(0, 2);
+console.log(subArray.toString());
+for ( var key in array3) {
+	console.log(array3[key]);	
+}
+
+var subArray = array3.splice(0, 2);
+console.log(subArray.toString());
+for ( var key in array3) {
+	console.log(array3[key]);	
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

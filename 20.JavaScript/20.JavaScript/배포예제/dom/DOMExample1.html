@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM 이해</title>
+</head>
+<body>
+	<span id="mySpan">스판입니다..</span>
+	<div>비다이드1입니다.</div>
+	<div>비다이드2입니다.</div>
+	<input type="text" name="userId" >
+
+<script type="text/javascript">
+	console.log("브라우저에 의해 BOM과 DOM이 생성 완료됨...");
+	
+	//alert(document.nodeType);
+	
+	// 현재 문서의 html 엘리먼트를 접근하고 싶어요..
+	var rootE = window.document.documentElement;
+	//var rootE = document.documentElement;
+	console.log(rootE.constructor);
+	console.log(rootE.nodeName);
+	console.log(rootE.nodeType);
+	console.log(rootE.nodeValue);
+	
+	// html 엘리먼트의 자식 엘리먼트들 접근하기..
+	var nodeList = rootE.childNodes;
+	console.log(nodeList.constructor);
+	console.log("html 엘리먼트의 자식엘리먼트 수: " + nodeList.length);
+	
+	var e = window.document.getElementById("mySpan");
+	console.log(e.constructor);
+	console.log(e.nodeType);
+	console.log(e.nodeName);
+	console.log(e.nodeValue);
+
+	var array = document.getElementsByTagName("div");
+	console.log(array.length);
+	//for (var i = 0; i < array.length; i++) {
+	for (var i = 0; i < array.length; i++) {
+		var e = array.item(i);
+		//console.log(e.nodeName);
+		//e.childeNodes[0].nodeValue;
+		var text = e.firstChild;
+		console.log(text.nodeType);
+		console.log(text.nodeName);
+		console.log(text.nodeValue);
+	}
+
+	var array = document.getElementsByName("userId");
+	console.log(array.constructor);
+	var input = array.item(0);
+	console.log(input.constructor);
+
+	// 현재문서의 최상위 엘리먼트(html) 접근 속성
+	var htmlE = document.documentElement;
+	console.log(htmlE.nodeType);
+	console.log(htmlE.nodeName);
+	console.log(htmlE.nodeValue);
+	
+	document.childNodes[0];
+</script>
+
+</body>
+</html>

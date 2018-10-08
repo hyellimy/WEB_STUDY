@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AMS</title>
+<script type="text/javascript" src="../js/Student.js"></script>
+</head>
+<body>
+<h2>배열을 이용한 학생 성적 관리 웹 애플리케이션</h2>
+<script type="text/javascript">
+//var students = new Array();
+var students = [];
+
+// 등록
+var student = new Student("김기정", 90, 50, 55, 100);
+students.push(student);
+students.push(new Student("홍길동", 100, 95, 100, 98));
+students.push(new Student("가길동", 88, 90, 100, 98));
+students.push(new Student("다길동", 98, 55, 100, 98));
+students.push(new Student("김길동", 70, 85, 100, 98));
+
+// 성적순으로 정렬
+students.sort(function(student1, student2){
+	return student2.getSum() - student1.getSum();	
+});
+
+/*
+students.sort(function(student1, student2){
+	return student2.getSum() - student1.getSum();	
+});
+*/
+
+// 전체목록 출력
+for ( var i in students) {
+	console.log(students[i].toString() + "<br>");
+}
+
+console.log("1등부터 3등");
+var students2 = students.slice(0, 3);
+for ( var i in students2) {
+	console.log(students2[i].toString() + "<br>");
+}
+
+</script>
+</body>
+</html>

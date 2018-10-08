@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+// 사용자 정의 이벤트 리스너
+function init(){
+	console.log("문서 로드 완료...");
+}
+
+// 이벤트소스에 시스템이벤트 리스너 등록
+window.onload =  function(){
+	//alert("문서 로드 완료요.."); 
+	
+	// 이벤트 소스에 사용자이벤트 리스너 등록
+	document.getElementById("myButton").onclick = function(){
+		console.log("버튼 클릭됨...");
+		document.getElementsByTagName("div")[0].innerHTML = "소미 바보";
+		document.getElementsByTagName("div")[0].style.fontSize = 150+"pt";
+	}
+	
+	// 이벤트리스너 제거
+	//document.getElementById("myButton").onclick = null;
+	
+	document.getElementsByName("id")[0].onchange = function(){
+		console.log("변경");
+	}
+	
+	document.getElementsByName("id")[0].ondblclick = function(){
+		this.style.backgroundColor = "yellow";
+	}
+	
+	document.getElementsByTagName("div")[0].onclick = function(){
+		this.style.backgroundColor = "gold";
+	}
+	
+	
+	document.getElementById("button2").onclick = function(e){
+		var event = e || window.event;
+		console.log(event.type);
+		event.target.style.backgroundColor = "tomato";
+		for ( var key in event) {
+			console.log(key + " : " + event[key]);
+		}
+	}
+}
+
+</script>
+</head>
+<body>
+<button id="myButton">클릭</button><br/>
+
+<input type="text" name="id" ><br/>
+
+<div>오늘 수업은 여기까지</div>
+
+<button id="button2">버튼2</button>
+
+</body>
+</html>

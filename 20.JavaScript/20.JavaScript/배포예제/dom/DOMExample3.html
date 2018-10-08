@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM 이해</title>
+</head>
+<body>
+	<select>
+		<option>C</option>
+		<option>C++</option>
+		<option>C#</option>
+		<option>Java</option>
+	</select>
+	<div id="list"></div>
+	
+<script type="text/javascript">
+	var html = "";
+	var nodeList = document.getElementsByTagName("option");
+	for (var i = 0; i < nodeList.length; i++) {
+		var text = nodeList.item(i).firstChild.nodeValue;
+		//console.log(text);
+		html += text + "<br/>";
+	}
+
+	var divE = document.getElementById("list");
+	divE.innerHTML = html;
+</script>
+</body>
+</html>
+
+
+
+
+

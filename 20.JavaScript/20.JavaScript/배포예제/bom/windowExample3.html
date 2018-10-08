@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>브라우저 객체</title>
+</head>
+<body>
+<h2>디지털 시계 구현</h2>
+<script type="text/javascript">
+(function(){
+	var windowWidth = 400;
+	var windowHeight = 200;
+	var x = (screen.width - windowWidth) / 2;
+	var y = (screen.height - windowHeight) / 2;
+	clockWindow = open("", "clockWindow", "left="+x+", top="+y+", width="+windowWidth+", height="+windowHeight);
+})();
+
+window.setInterval(function(){
+	var now = new Date();
+	//document.write("<p style='text-align:center'>" + now.toLocaleString() + "</p>");
+	clockWindow.document.write("<p style='text-align:center'>" + now.toLocaleString() + "</p>");
+}, 1000);
+
+</script>
+</body>
+</html>

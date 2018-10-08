@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>문서 객체들에 대한 이벤트 처리</title>
+<script>
+window.onload = function () {
+	
+	var button = document.getElementById('viewButton');
+	button.onclick = function(){
+		var str = document.calculator.expression.value;
+		//var str = "10+20"
+		
+    	var result = window.eval(str); // 10 + 20
+    	document.calculator.result.value = result;
+	};
+    
+	document.getElementById('changeButton').ondblclick = function(){
+		document.body.style.backgroundColor = 'yellow';
+	};
+	
+	document.score.onsubmit = function(){
+		checkValidate(this);
+	};
+	
+	// 유효성 검증
+    function checkValidate(form){
+    	var isSelected = false;
+    	for(var i=0; i<form.grade.length; i++) {
+    		if(form.grade[i].checked){
+    			isSelected = true;
+    			break;
+    		}
+    	}
+    	
+    	if(!isSelected) {
+    		alert("성적을 선택하여 주세요.");
+    		return false;
+    	}
+    	return true;
+    }
+};
+</script>
+</head>
+<body>
+<h2>다양한 이벤트 종류별 이벤트 처리</h2>
+
+<form name="calculator">
+  수식 <input type="text" name="expression" size=30> = <input type="text" name="result" size=20/>
+  <input	type="button" id="viewButton" value="결과보기"/>
+</form>
+
+<input type="button" value="배경색변경" id="changeButton"/>
+
+<form name="score" action="some.jsp" method="post">
+  성적 선택 : 
+  <input type="radio" name="grade" value="a">A 
+  <input type="radio" name="grade" value="b">B 
+  <input type="radio" name="grade" value="c">C 
+  <input type="radio" name="grade" value="d">D 
+  <input type="radio" name="grade" value="f">F 
+  <br>
+  <input type="submit" value="전송">
+  <input type="reset" value="취소">
+</form> 
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트 버블링</title>
+<style type="text/css">
+* {
+	border: 3px solid black;
+}
+</style>
+<script type="text/javascript">
+// 이벤트소스에 시스템이벤트 리스너 등록
+window.onload =  function(){
+	document.getElementById("parapraph").onclick = 	function(e){
+		var event = e || window.event;
+		alert("클릭이벤트 처리 완료!");
+		if(e.stopPropagation){
+			e.stopPropagation();
+		}else{
+			e.cancelBubble = true;
+		}
+	}
+}
+
+</script>
+</head>
+<body>
+<div onclick="alert('헐랭이');">
+	<div>
+		<h1>
+			<p id="parapraph">Paragraph</p>
+		</h1>
+	</div>
+</div>
+</body>
+</html>
+
+
+
+
+

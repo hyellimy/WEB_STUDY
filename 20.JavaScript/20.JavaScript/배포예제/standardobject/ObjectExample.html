@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+// 생성자 호출을 이용한 명시적 생성
+var obj = new Object();
+// 묵시적 생성
+//var obj = {};
+var obj = {
+	name : "김기정"		
+};
+//obj.constrcutor;
+
+var obj2 = obj.constructor(); // new Object();
+console.log(obj2.toString());
+console.log(obj.constructor);
+
+// 상속받은것 포함
+console.log("name" in obj);
+console.log("toString" in obj);
+
+// 상속받은것 제외
+console.log(obj.hasOwnProperty("name"));
+console.log(obj.hasOwnProperty("toString"));
+
+console.log(obj.propertyIsEnumerable("name"));
+for ( var key in obj) {
+	console.log(key + " : " + obj[key]);
+}
+
+var value = obj.valueOf();
+console.log(value);
+console.log(typeof value);
+
+console.log(typeof new String("test"));
+console.log(typeof new String("test").valueOf());
+
+
+</script>
+</body>
+</html>

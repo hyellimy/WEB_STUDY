@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>브라우저 객체</title>
+</head>
+<body>
+<h2>스크립트엔진에 의해 미리 생성되어 있는 브라우저 관련 객체들(BOM)</h2>
+<script type="text/javascript">
+
+//window.open();
+//open("http://www.naver.com");
+//open("http://www.naver.com", "myWindow");
+//open("http://www.naver.com", "myWindow", "width=200, height=100");
+//open("http://www.w3schools.com", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=200, left=200, width=400, height=400");
+
+function openWindow() {
+   myWindow = window.open("windowExample.html", "myWindow", "width=200, height=200");
+}
+
+function closeWindow() {
+    myWindow.close();
+}
+
+//openWindow();
+//closeWindow();
+
+window.setTimeout(function(){
+	//alert("경고창입니다..");
+	openWindow();
+}, 3000);
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>디폴트이벤트 제거</title>
+<script type="text/javascript">
+// 이벤트소스에 시스템이벤트 리스너 등록
+window.onload =  function(){
+	console.log(document.myForm.name);
+	console.log(document.myForm.method);
+	console.log(document.myForm.action);
+	
+	document.myForm.onsubmit = function(){
+		// 유효성 검증
+		var name = document.myForm.name.value;
+		// document객체에는 여러개의 <form>과 <form>안의 여러개의
+		// <input>객체들을 저장할 수 있는 forms와 elements 배열(Array)을 제공
+		//var name = document.forms[0].elements[0].value;
+		if(name == null || name.length == 0){
+			alert("이름을 입력하여 주세요..");
+			return false;
+		}
+		
+		var passwd = document.myForm.passwd.value;
+		var passwdCheck = document.myForm.passwdCheck.value;
+		
+		if(passwd != passwdCheck){
+			alert("비밀번호를 확인하여 주세요.");
+			return false;
+		}
+		
+		//return true;
+		document.myForm.submit();
+	}
+}
+
+</script>
+</head>
+<body>
+<form action="some.jsp" name="myForm" method="get">
+	<label>이름 : <input type="text" name="name"></label><br/>
+	<label>비밀번호 : <input type="password" name="passwd" ></label><br/>
+	<label>비밀번호 확인 : <input type="password" name="passwdCheck"></label><br/>
+	<input type="submit" value="제출">
+</form>
+
+
+
+</body>
+</html>
+
+
+
+
+

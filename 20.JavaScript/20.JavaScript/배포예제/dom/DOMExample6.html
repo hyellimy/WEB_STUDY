@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM 이해</title>
+<style type="text/css">
+body {
+	font-family: 돋움;
+	font-size: 30pt;
+	text-align: center;
+}
+
+div {
+	width: 600px;
+	margin: 50px auto;
+	background-color: yellow;
+	border: 1px solid blue;
+}
+</style>
+</head>
+<body>
+	<div id="clock"></div>
+<script type="text/javascript">
+	var clock = document.getElementById("clock");
+	
+	setInterval(function() {
+		var now = new Date().toLocaleString();
+		clock.innerHTML = now;
+	}, 1000);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

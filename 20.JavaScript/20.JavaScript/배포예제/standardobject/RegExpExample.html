@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<script>
+// 명시적 생성
+var regExp = new RegExp("패턴");
+console.log(regExp.constructor);
+// 묵시적 생성
+console.log(typeof /패턴/);
+
+var str = "The quick brown fox jumps over th lazy dog.";
+//var ss = str.split(new RegExp("\\s"));
+var tokens = str.split(/\s/);
+for ( var i in tokens) {
+	console.log(tokens[i]);
+}
+
+
+// Self 호출을 이용한 정규표현식 테스트
+(function() {
+	var s = "1    , 2, 3, 4, 5";
+	// * : 앞의 항목이 0번 이상 
+	var ss = s.split(/\s*, \s*/);
+
+	for(i in ss) {
+		document.write(ss[i]);
+		document.write("<br>");
+	}
+})();
+
+
+(function() {
+	var str = "JavaScript is more fun than java!";
+	// g : 전역매칭 수행(처음 매치에서 끝내지 않고 모든 매치 찾음) 
+	// i : 대소문자 구별하지 않음. 
+	var pattern = /Java/gi;
+	var arr = str.match(pattern);
+
+	for(var i=0; i<arr.length; i++) {
+		document.write(arr[i]);
+		document.write("<br>");
+	}
+	document.write("<br>");			
+})();
+
+
+(function() {
+	var src = "azcafAJAC";
+	var reg = /[a-c]/g;
+	var result = src.match(reg);
+
+	for(var i=0; i<result.length; i++) {
+		document.write(result[i]);
+		document.write("<br>");
+	}
+	document.write("<br>");	
+})();
+
+
+(function() {
+	var src = "1 2 3 444 is but a d4ream wi3th in a dream";
+
+	// \d : 모든 숫자 
+	// + : 앞의 항목의 한 번 이상 
+	var reg = /\d+/g;
+	var result = src.match(reg);
+	document.write(result);
+	document.write("<br>");
+})();
+
+
+(function() {
+	var str = "is this all ther is?";
+	var patt = /[^h]/g; //부정
+	var result = str.match(patt);
+	document.write(result);
+	document.write("<br>");
+})();
+
+
+(function() {
+	var s = "the batter hit the ball with the bat";
+	var reg = /the/g;
+	var result = s.replace(reg, "a");
+	document.write(result);
+	document.write("<br>");
+})();
+
+
+(function() {
+	var src = "is but a Dream within a dream";
+	var reg = /dream/;
+
+	var position = src.search(reg);
+	document.write(position);
+	document.write("<br>");
+})();
+
+</script>
+</html>

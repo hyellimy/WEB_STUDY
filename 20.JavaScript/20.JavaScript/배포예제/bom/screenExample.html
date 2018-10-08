@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>브라우저 객체</title>
+</head>
+<body>
+<h2>스크립트엔진에 의해 미리 생성되어 있는 브라우저 관련 객체들(BOM)</h2>
+<script type="text/javascript">
+var child = open("", "", "width=300, height=200");
+var width = screen.width;
+var height = screen.height; 
+
+child.moveTo(0, 0);
+child.resizeTo(width, height);
+
+setInterval(function(){
+	child.resizeBy(-20, -20);
+	child.moveBy(10, 10);
+}, 1000);
+
+</script>
+</body>
+</html>
+
+
+
+
+
+

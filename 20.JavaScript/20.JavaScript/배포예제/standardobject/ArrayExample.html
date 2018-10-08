@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+// 생성자를 이용한 배열 명시적 생성
+//var array = new Array();
+//var array = new Array(10);
+var array = new Array(10, 20, 30, "김기정", new Date());
+array.push("소영종");
+array.push(1000);
+
+for (var i = 0; i < array.length; i++) {
+	console.log(array[i]);
+}
+
+for ( var i in array) {
+	document.write(array[i] + "<br>");
+}
+
+// 배열 묵시적 생성
+var array = [10, 20, 30];
+array.length = 0; // 배열 삭제
+for ( var i in array) {
+	document.write(array[i] + "<br>");
+}
+
+// 주요 메소드
+array.push(10);
+array.push(20);
+array.push(30);
+array.unshift(5);
+for ( var i in array) {
+	document.write(array[i] + "<br>");
+}
+
+document.write("---------------------<br>");
+var value = array.pop();
+document.write(value);
+document.write(array.pop());
+
+document.write(array.shift() + "<br>");
+
+document.write("---------------------<br>");
+
+for ( var key in array) {
+	document.write(array[key] + "<br>");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

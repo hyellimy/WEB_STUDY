@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewpoint" content="width=divice-width, initial-scale=1">
+<meta name="author" content="HyerimLee">
+
+<title>계좌 조회 시스템</title>
+<!-- 파일 연결  -->
+<script type="text/javascript" src="../js/Account.js"></script>
+<script type="text/javascript" src="../js/AccountManager.js"></script>
+<script type="text/javascript" src="../js/MinusAccount.js"></script>
+<script type="text/javascript" src="../js/Event.js"></script>
+
+
+<!-- 스타일 지정 -->
+<style>
+body {
+	font-family: "나눔바른고딕";
+    font-style: bold;
+}
+
+.li_table {
+	width: 550px;
+	padding: 1em;
+	border: 1px solid blacks;
+	margin: 0 auto; /* 여백 자동 조정을 통한 가운데 정렬 */
+	height: 400px;
+	background: pink;
+}
+
+.button {
+	width: 70px;
+	background-color: #f8585b;
+	border: none;
+	color: #fff;
+	padding: 3px 0;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+	display: inline-block;
+	font-size: 13px;
+	margin: 1px;
+	cursor: pointer;
+}
+
+header {
+	height: 50px;
+	margin: 0 auto;
+	padding: 3px 0;
+	background-color: pink;
+	width: 580px;
+	text-align: center;
+	font-size: 18pt;
+	text-decoration: bold;
+}
+
+aside {
+	width: 100px;
+}
+
+footer {
+	height: 50 px;
+	position: relative;
+	clear: both;
+}
+
+.button:hover {
+	background: #fff;
+	color: #f8585b;
+}
+
+.button:before, .button:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 2px;
+	width: 0;
+	background: #f8585b;
+	transition: 400ms ease all;
+}
+
+.button:after {
+	right: inherit;
+	top: inherit;
+	left: 0;
+	bottom: 0;
+}
+
+.button:hover:before, .button:hover:after {
+	width: 100%;
+	transition: 800ms ease all;
+}
+
+table.type10 {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	border-top: 1px solid #e7708d;
+	border-bottom: 1px solid #fdf3f5;
+	margin: 20px 10px;
+}
+
+table.type10 thead th {
+	width: 150px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	color: #fff;
+	background: #e7708d;
+	text-align: center;
+	margin: 20px 10px;
+}
+
+table.type10 td {
+	width: 350px;
+	padding: 5px;
+	font-size: 13pt;
+	vertical-align: top;
+	text-align: center;
+}
+
+table.type10 .even {
+	background: #fdf3f5;
+	text-align: center;
+	font-size: 10pt;
+}
+
+.row {
+	margin: 10px;
+	font-size: 15px;
+	padding: 1px;
+}
+
+.hidden {
+	font-size: 10pt;
+	color: red;
+}
+</style>
+</head>
+
+<body style="padding: 0px">
+  <!-- 헤더 부분 시작 -->
+  <header>
+    <h2 style="text-align: center">은행 계좌 관리 시스템</h2>
+
+  </header>
+  <!-- 섹션 부분 시작  -->
+  <section>
+    <section id="contents">
+
+      <div class="li_table">
+        <div class="row">
+          <span class="cell col1">계좌종류</span> <span class="cell col2">
+            <select name="accountkind" style="width: 3cm"
+            id="accountKind">
+              <option value="선택하세요" selected="selected">선택하세요</option>
+              <option value="plus">입출금 계좌</option>
+              <option value="minus">마이너스 계좌</option>
+          </select>
+          </span> <img alt="춤추는라이언"
+            style="width: 100px; height: 100px; float: right"
+            src="../images/KakaoTalk_20181006_181202004.gif">
+        </div>
+
+        <!--  히든 글자  -->
+        <div class="Error">
+          <label class="hidden">Error : </label> 계좌 종류가 선택되지 않았습니다.
+        </div>
+
+
+        <div class="row">
+          <label class="cell col1" for="accountNum">계좌번호</label> <span
+            class="cell col2"><input type="text"
+            name="accountNum" id="accountNum" placeholder="예) 1111-2222">
+            <input type="button" value="조회" class="button"
+            id="search_bt"> <input type="button" value="삭제"
+            class="button" id="delete_bt"></span>
+        </div>
+
+        <!--  히든 글자  -->
+        <div class="Error">
+          <label class="hidden">Error : </label> 해당하는 계좌가 없습니다.
+
+        </div>
+
+        <div class="row">
+          <label class="cell col1" for="accountOwner">예금주명</label> <span
+            class="cell col2"> <input type="text"
+            name="accountOwner" id="accountOwner" placeholder="예) 이혜림">
+            <input type="button" class="button" id="search_name_bt"
+            value="검색"></span>
+        </div>
+
+        <!--  히든 글자  -->
+        <div class="Error">
+          <label class="hidden">Error : </label> 해당하는 이름의 계좌가 없습니다.
+        </div>
+
+
+        <div class="row">
+          <label class="cell col1" for="passwd">비밀번호</label> <span
+            class="cell col2"> <input type="password" name="passwd"
+            id="passwd" placeholder="비밀번호를 입력해주세요." maxlength="4"> <label
+            for="deposit">입금금액</label> <input type="number"
+            name="deposit" id="deposit" placeholder="예) 10,000"></span>
+        </div>
+
+        <!--  히든 글자  -->
+        <div class="Error">
+          <label class="hidden">Error : </label> 비밀번호를 입력해주세요.
+        </div>
+
+
+
+        <form name="myForm3" action="#" method="get">
+          <div class="row">
+            <label class="cell col1" for="borrowMoney">대출금액</label> <span
+              class="cell col2"><input type="number"
+              name="borrowMoney" id="borrowMoney"
+              placeholder="예) 10,000"> <input type="button"
+              class="button" id="addNew_bt" value="신규등록"> <input
+              type="button" class="button" id="listAll_bt" value="전체조회"></span>
+          </div>
+        </form>
+
+        <!--  히든 글자  -->
+        <div class="Error">
+          <label class="hidden">Result : </label> 대출금액 입력오류
+        </div>
+
+        <iframe width="100%" src="ams_table.html" id="table"></iframe>
+
+
+        <div class="Error">
+          <label class="hidden" id="result"> Result : </label> 계좌 조회 및
+          변경 처리 완료
+        </div>
+    </section>
+  </section>
+  <aside></aside>
+  <footer></footer>
+
+</body>
+</html>

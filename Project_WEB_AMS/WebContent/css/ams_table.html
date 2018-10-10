@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body {
+   width: 500px;
+   height: 700px;
+}
+
+table.type10 {
+   border-collapse: collapse;
+   text-align: left;
+   line-height: 1.5;
+   border-top: 1px solid #e7708d;
+   border-bottom: 1px solid #fdf3f5;
+   margin: 20px 10px;
+}
+
+table.type10 thead th {
+   width: 150px;
+   padding: 10px;
+   font-weight: bold;
+   vertical-align: top;
+   color: #fff;
+   background: #e7708d;
+   text-align: center;
+   margin: 20px 10px;
+}
+
+table.type10 td {
+   width: 350px;
+   padding: 5px;
+   text-size: 10pt;
+   vertical-align: top;
+   text-align: center;
+}
+
+tbody{
+width: 350px;
+   padding: 5px;
+   text-size: 10pt;
+   vertical-align: top;
+   text-align: center;
+}
+
+#my-tbody {
+   width: 350px;
+   padding: 5px;
+   text-size: 10pt;
+   vertical-align: top;
+   text-align: center;
+   
+}
+
+table.type10 .even {
+   background: #fdf3f5;
+   text-align: center;
+}
+</style>
+<meta charset="utf-8">
+<title>e</title>
+</head>
+<body>
+   <div>
+      <span style="float: left">계좌목록</span> 
+      <span style="float: right">(단위:원)</span>
+   </div>
+
+   <table class="type10" style="width: 100%">
+
+      <thead>
+         <tr>
+            <th scope="cols">계좌종류</th>
+            <th scope="cols">계좌번호</th>
+            <th scope="cols">예금주명</th>
+            <th scope="cols">현재잔액</th>
+            <th scope="cols">대출금액</th>
+         </tr>
+      </thead>
+      <!-- 추가될 내용 -->
+      <tbody class="type10" id="my-tbody"></tbody>
+      
+   </table>
+</body>
+</html>

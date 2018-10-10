@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="Account.js"></script>
+<script type="text/javascript" src="AccountManager.js"></script>
+<script type="text/javascript" src="MinusAccount.js"></script>
+
+</head>
+<body>
+   <script type="text/javascript">
+
+  
+
+for(var i in manager){
+   console.log(manager[i].toString);
+}
+
+var lists = manager.listAll();
+console.log(lists);
+
+for(var key in lists){
+    console.log(key+ ':', lists[key]);
+}
+
+
+
+//list조회 메서드
+console.log(manager.listAll());
+//get 조회 메서드 
+console.log(manager.get("1111-1111"));
+//get 작동 완료
+console.log('manager.get("1111-8888") :'+ manager.get('1111-8888'));
+//search 조회 메서드
+console.log(manager.search("사혜림"));
+// remove 메서드
+console.log("manager.remove('1111-3333')","manager.remove('1111-4444')");
+
+
+</script>
+</body>
+</html>

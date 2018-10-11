@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<h3>FORM 폼 관련 태그들 활용하기 </h3>
+
+<form action="/servlet/receive.do" method="post" enctype="application/x-www-form-urlencoded">
+<fieldset>
+<legend>로그인 정보</legend>
+  <label for="userid"> 아이디 : </label><input type="text" name="userid" id="userid"><br>
+  <label for="passwd"> 비밀번호 : </label><input type="passwd" name="passwd" id="passwd"><br>
+  <!-- <input type="button" value="로그인"> -->
+  <input type="submit" value="로그인">
+  <input type="reset" value="취소">
+
+</fieldset>
+
+  <select name="teams" multiple="multiple">
+    <option value="tigers">두산 타이거즈
+    <option value="wyverns">SK 와이번스!!!! 
+    <option value="giant">한화 자이언츠 
+  </select>
+  <textarea rows="5" cols="30" name="message">점심먹고 합시다!</textarea>
+
+<label>여자<input type="radio" name="gender" value="Male"></label>
+<label>남자<input type="radio" name="gender" value="Female" checked></label>
+
+<input type="hidden" name="some" value="test">
+<input type="file" name="file_upload" value="test">
+<input type="image" src="./Images/icons4667.png">
+
+
+<label>등산<input type="checkbox" name="hobby" value="h"></label>
+<label>워킹<input type="checkbox" name="hobby" value="w"></label>
+<label>독서<input type="checkbox" name="hobby" value="r"></label>
+
+
+
+
+<button>버튼</button>
+
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>login screen</title>
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit],[type=button] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    width : 50%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 10px auto;
+}
+
+h3 {
+text-align: center;
+}
+
+</style>
+
+<script type="text/javascript">
+window.onload = function() {
+	eventRegist();
+}
+
+function eventRegist() {
+	document.getElementById("loginButton").onclick = function (){
+		sendServer();
+	}
+	
+}
+
+
+function sendServer() {
+	var firstName = document.getElementById("fname").value;
+	
+	if(!firstName || firstName.trim().length == 0 ){
+		alert("이름이 입력되지 않았습니다. 다시 확인하고 입력해주세요.");
+	}else{
+		document.loginForm.action = "/servlet/receive.do"; 
+		document.loginForm.method = "get"; 
+		document.loginForm.submit(); 
+		
+	} 
+}
+</script>
+
+
+</head>
+<body>
+
+<h3>로그인 화면</h3>
+
+<div>
+ <!--  액션을 지정한다는 의미 :  -->
+  <form name="loginForm" >
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="성을 입력해주세요.">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="이름을 입력해주세요.">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <!-- 이 세가지가 같은 것이다.
+    <input type="submit" value="로그인">
+    <input type="image" scr="../assets/KakaoTalk_20181006_181202004.gif">
+    <button>로그인</button>
+      -->
+    
+    
+    <input type="button" value="로그인"  id="loginButton">
+    
+  </form>
+</div>
+
+</body>
+</html>

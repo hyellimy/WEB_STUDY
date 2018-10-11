@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>ServletStudy</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/hello.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HelloServlet2</display-name>
+    <servlet-name>HelloServlet2</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.HelloServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet2</servlet-name>
+    <url-pattern>/hello2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MIMEServlet</display-name>
+    <servlet-name>MIMEServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.MIMEServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MIMEServlet</servlet-name>
+    <url-pattern>/mime.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MIMEServlet2</display-name>
+    <servlet-name>MIMEServlet2</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.MIMEServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MIMEServlet2</servlet-name>
+    <url-pattern>/music.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MIMEServletPPTcopy</display-name>
+    <servlet-name>MIMEServletPPTcopy</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.MIMEServletPPTcopy</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MIMEServletPPTcopy</servlet-name>
+    <url-pattern>/ppt.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LifecycleServlet</display-name>
+    <servlet-name>LifecycleServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.LifecycleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifecycleServlet</servlet-name>
+    <url-pattern>/cycle.do</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>HttpServletRequestServlet</display-name>
+    <servlet-name>HttpServletRequestServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.HttpServletRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HttpServletRequestServlet</servlet-name>
+    <url-pattern>/request.do</url-pattern>
+  </servlet-mapping>
+  
+  
+     <servlet>
+    <description></description>
+    <display-name>ReceiveServlet</display-name>
+    <servlet-name>ReceiveServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.ReceiveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReceiveServlet</servlet-name>
+    <url-pattern>/receive.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+    
+     <servlet>
+    <description></description>
+    <display-name>HttpServletResponseServlet</display-name>
+    <servlet-name>HttpServletResponseServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.HttpServletResponseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HttpServletResponseServlet</servlet-name>
+    <url-pattern>/response.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+</web-app>

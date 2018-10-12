@@ -40,6 +40,7 @@ public class HttpServletResponseServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
+		/* 
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>Servlet Programming</title>");
@@ -54,11 +55,13 @@ public class HttpServletResponseServlet extends HttpServlet {
 		out.println("</ul>");
 		out.println("<h2></h2>");
 		out.println("</body>");
-		out.println("</html>");
-
+		out.println("</html>"); */
 		
-	
-			
+		//Dispatch 기술 
+		System.out.println(HttpServletResponse.SC_MOVED_PERMANENTLY);
+		//response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+		//response.setHeader("Location", "/servlet/hello.do");
+		response.sendRedirect("/servlet/hello.do");	
 	}
 
 }

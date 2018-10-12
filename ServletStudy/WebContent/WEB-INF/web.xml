@@ -5,6 +5,15 @@
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <!-- 서블릿 컨테이너에 등록된 모든 서블릿을 위한 초기 파라미터  -->
+  <context-param>
+   <param-name>Location</param-name>
+   <param-value>c:/a/b/c/some.xml</param-value>
+  </context-param>
+  
+  
   <servlet>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>kr.or.kosta.servlet.HelloServlet</servlet-class>
@@ -63,6 +72,8 @@
     <servlet-name>LifecycleServlet</servlet-name>
     <url-pattern>/cycle.do</url-pattern>
   </servlet-mapping>
+  
+  
     <servlet>
     <description></description>
     <display-name>HttpServletRequestServlet</display-name>
@@ -101,7 +112,123 @@
   </servlet-mapping>
   
   
+     
+     <servlet>
+    <description></description>
+    <display-name>DatabaseServlet</display-name>
+    <servlet-name>DatabaseServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.DatabaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DatabaseServlet</servlet-name>
+    <url-pattern>/database.do</url-pattern>
+  </servlet-mapping>
   
+  
+  
+     <servlet>
+    <description></description>
+    <display-name>DatabaseServlet2</display-name>
+    <servlet-name>DatabaseServlet2</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.DatabaseServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DatabaseServlet2</servlet-name>
+    <url-pattern>/database2.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletConfigServlet</display-name>
+    <servlet-name>ServletConfigServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.ServletConfigServlet</servlet-class>
+    <init-param>
+    	<param-name>driver</param-name>
+    	<param-value>oracle.jdbc.OracleDriver</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletConfigServlet</servlet-name>
+    <url-pattern>/config.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+    
+  <servlet>
+    <description></description>
+    <display-name>DispatchServlet</display-name>
+    <servlet-name>DispatchServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.DispatchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DispatchServlet</servlet-name>
+    <url-pattern>/dispatch.do</url-pattern>
+  </servlet-mapping>
+  
+  
+      
+  <servlet>
+    <description></description>
+    <display-name>ServletContextServlet</display-name>
+    <servlet-name>ServletContextServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.ServletContextServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletContextServlet</servlet-name>
+    <url-pattern>/servletcontext.do</url-pattern>
+  </servlet-mapping>
+  
+     
+  <servlet>
+    <description></description>
+    <display-name>HttpSesstionServlet</display-name>
+    <servlet-name>HttpSesstionServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.HttpSesstionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HttpSesstionServlet</servlet-name>
+    <url-pattern>/sesstion.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+       
+  <servlet>
+    <description></description>
+    <display-name>CookieServlet</display-name>
+    <servlet-name>CookieServlet</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.CookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieServlet</servlet-name>
+    <url-pattern>/cookie.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>CookieTest</display-name>
+    <servlet-name>CookieTest</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.CookieTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieTest</servlet-name>
+    <url-pattern>/cookietest.do</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <description></description>
+    <display-name>index</display-name>
+    <servlet-name>index</servlet-name>
+    <servlet-class>kr.or.kosta.servlet.index</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>index</servlet-name>
+    <url-pattern>/index.do</url-pattern>
+  </servlet-mapping>
   
   
 </web-app>

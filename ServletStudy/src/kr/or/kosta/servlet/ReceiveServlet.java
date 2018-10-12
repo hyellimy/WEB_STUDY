@@ -28,7 +28,7 @@ public class ReceiveServlet extends HttpServlet {
 	
 	public void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html; charset=utf-8");
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8"); // 한글 인코딩 처리를 가능하게 하는 처리 :-) 
 		PrintWriter out = response.getWriter();
 
 		//요청 파라메터 수신 
